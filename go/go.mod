@@ -1,3 +1,3 @@
-module github.com/yondifon/mobile-cm-php/go
+module github.com/yondifon/mobile-cm/go
 
 go 1.21
