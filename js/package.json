@@ -1,0 +1,26 @@
+{
+  "name": "mobile-cm",
+  "version": "0.1.0",
+  "description": "Identify the Cameroonian mobile operator (MTN, Orange, Nexttel, Camtel) that issued a phone number.",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.6",
+    "typescript": "^5.6.0"
+  }
+}
