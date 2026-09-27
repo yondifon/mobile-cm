@@ -9,10 +9,13 @@ OPERATOR_PREFIXES: Mapping[str, tuple[str, ...]] = MappingProxyType({
     "camtel": ("62", "222", "233", "242", "243"),
 })
 
+# Unicode White_Space; Python's \s adds U+001C-U+001F.
+_WHITESPACE = re.compile(r"[\t\n\v\f\r \x85\xa0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000]+")
+
 
 def check(tel: str) -> Optional[str]:
     """Return the issuing operator for a Cameroonian phone number."""
-    compact = re.sub(r"\s+", "", tel, flags=re.ASCII)
+    compact = _WHITESPACE.sub("", tel)
     match = re.fullmatch(r"(?:(?:\+|00)?237)?([0-9]{9})", compact, flags=re.ASCII)
     if match is None:
         return None

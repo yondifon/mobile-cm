@@ -55,7 +55,8 @@ class Network
 
     private static function nationalNumber(string $tel): ?string
     {
-        $tel = preg_replace('/\s+/', '', $tel);
+        // Unicode White_Space, spelled out because PCRE's \s misses some; null on invalid UTF-8.
+        $tel = preg_replace('/[\t\n\x{0B}\f\r \x{85}\x{A0}\x{1680}\x{2000}-\x{200A}\x{2028}\x{2029}\x{202F}\x{205F}\x{3000}]+/u', '', $tel) ?? '';
 
         // "+237 6 77 12 34 56" → "677123456"
         return preg_match('/^(?:(?:\+|00)?' . self::PREFIX . ')?(\d{9})$/', $tel, $match) ? $match[1] : null;

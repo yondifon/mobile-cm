@@ -35,6 +35,15 @@
   { "input": "620105050", "operator": "camtel" },
   { "input": "+237 620 10 50 50", "operator": "camtel" },
 
+  { "input": "676 777777", "operator": "mtn" },
+  { "input": "+237 676 77 77 77", "operator": "mtn" },
+  { "input": "676\u000b777777", "operator": "mtn" },
+  { "input": "676\u0085777777", "operator": "mtn" },
+  { "input": "676　777777", "operator": "mtn" },
+
+  { "input": "676​777777", "operator": null },
+  { "input": "676﻿777777", "operator": null },
+  { "input": "６７６７７７７７７", "operator": null },
   { "input": "67677777", "operator": null },
   { "input": "6767777777", "operator": null },
   { "input": "643123456", "operator": null },

@@ -56,15 +56,8 @@ func isOperator(tel string, operator Operator) bool {
 }
 
 func nationalNumber(tel string) (string, bool) {
-	var compact strings.Builder
-	compact.Grow(len(tel))
-	for i := 0; i < len(tel); i++ {
-		if isWhitespace(tel[i]) {
-			continue
-		}
-		compact.WriteByte(tel[i])
-	}
-	tel = compact.String()
+	// strings.Fields splits on unicode.IsSpace, which is exactly Unicode White_Space.
+	tel = strings.Join(strings.Fields(tel), "")
 
 	if strings.HasPrefix(tel, "+237") {
 		tel = tel[4:]
@@ -83,8 +76,4 @@ func nationalNumber(tel string) (string, bool) {
 		}
 	}
 	return tel, true
-}
-
-func isWhitespace(ch byte) bool {
-	return ch == ' ' || ch == '\t' || ch == '\n' || ch == '\v' || ch == '\f' || ch == '\r'
 }

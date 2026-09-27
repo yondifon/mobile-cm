@@ -78,7 +78,7 @@ pub fn is_camtel(tel: &str) -> bool {
 /// Strips whitespace and the optional `237`/`+237`/`00237` country code prefix, returning the
 /// 9-digit national number. `None` if what's left isn't exactly 9 digits.
 fn national_number(tel: &str) -> Option<String> {
-    let chars: Vec<char> = tel.chars().filter(|c| !c.is_ascii_whitespace()).collect();
+    let chars: Vec<char> = tel.chars().filter(|c| !c.is_whitespace()).collect();
     if chars.len() < 9 {
         return None;
     }

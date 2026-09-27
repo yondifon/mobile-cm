@@ -41,6 +41,11 @@ const Map<Operator, List<String>> operatorPrefixes = {
   Operator.camtel: ['62', '222', '233', '242', '243'],
 };
 
+// Unicode White_Space; Dart's \s adds U+FEFF and misses U+0085.
+final RegExp _whitespace = RegExp(
+  r'[\t\n\v\f\r \u0085\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000]+',
+);
+
 final RegExp _nationalNumberPattern = RegExp(
   '^(?:(?:\\+|00)?$_countryCode)?(\\d{9})\$',
 );
@@ -72,6 +77,6 @@ bool isCamtel(String tel) => check(tel) == Operator.camtel;
 /// Strips whitespace and the optional `237`/`+237`/`00237` country code, returning the
 /// 9-digit national number, or `null` if what's left isn't exactly 9 digits.
 String? _nationalNumber(String tel) {
-  final compact = tel.replaceAll(RegExp(r'\s+'), '');
+  final compact = tel.replaceAll(_whitespace, '');
   return _nationalNumberPattern.firstMatch(compact)?.group(1);
 }

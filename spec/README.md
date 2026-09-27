@@ -5,7 +5,8 @@ Every implementation in this repo follows this file and must pass `cases.json`.
 ## Rules
 
 - A number is 9 digits, optionally preceded by `237`, `+237`, or `00237`.
-- Whitespace anywhere is ignored. Any other character (`-`, `.`, `(`) makes the number invalid.
+- Whitespace anywhere is ignored: the 25 characters with the Unicode `White_Space` property (U+0009–U+000D, U+0020, U+0085, U+00A0, U+1680, U+2000–U+200A, U+2028, U+2029, U+202F, U+205F, U+3000). This covers the non-breaking spaces French formatting uses. List them explicitly where the language's `\s` differs.
+- Any other character (`-`, `.`, `(`, zero-width space U+200B, BOM U+FEFF) makes the number invalid. Digits are ASCII `0`–`9` only.
 - The operator is the one whose prefix starts the 9-digit number; prefixes never overlap. No match → no operator (`null`/`None`).
 - Operator names are lowercase: `mtn`, `orange`, `nexttel`, `camtel`.
 

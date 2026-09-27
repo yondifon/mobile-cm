@@ -11,8 +11,11 @@ export type Operator = keyof typeof OPERATOR_PREFIXES;
 
 const NATIONAL_NUMBER = new RegExp(`^(?:(?:\\+|00)?${COUNTRY_CODE})?(\\d{9})$`);
 
+// Unicode White_Space; JS's \s adds U+FEFF and misses U+0085.
+const WHITESPACE = /[\t\n\v\f\r \u0085\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000]+/g;
+
 function nationalNumber(tel: string): string | null {
-  const stripped = tel.replace(/\s+/g, '');
+  const stripped = tel.replace(WHITESPACE, '');
   const match = stripped.match(NATIONAL_NUMBER);
   return match ? match[1] : null;
 }
