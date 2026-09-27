@@ -1,0 +1,11 @@
+[package]
+name = "mobile-cm"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Identify the Cameroonian mobile operator that issued a phone number"
+
+[dependencies]
+
+[dev-dependencies]
+serde_json = "1"

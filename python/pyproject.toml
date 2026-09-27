@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mobile-cm"
+version = "0.1.0"
+description = "Identify the operator that issued a Cameroonian phone number"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["mobile_cm"]
+
+[tool.setuptools.package-data]
+mobile_cm = ["py.typed"]
