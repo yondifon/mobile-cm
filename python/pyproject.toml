@@ -1,14 +1,20 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "mobile-cm"
-version = "0.1.0"
+version = "1.4.0"
 description = "Identify the operator that issued a Cameroonian phone number"
 readme = "README.md"
 requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["cameroon", "phone", "mobile", "operator", "mtn", "orange"]
 dependencies = []
+
+[project.urls]
+Source = "https://github.com/yondifon/mobile-cm-php/tree/main/python"
 
 [dependency-groups]
 dev = ["pytest>=8"]

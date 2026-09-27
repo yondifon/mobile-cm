@@ -2,17 +2,6 @@
 	"name": "malico/mobile-cm-php",
 	"description": "Get Telephone number's Mobile Network",
 	"license": "MIT",
-	"archive": {
-		"exclude": [
-			"tests",
-			"spec",
-			"js",
-			"python",
-			"rust",
-			"go",
-			"dart"
-		]
-	},
 	"authors": [
 		{
 			"name": "Malico",

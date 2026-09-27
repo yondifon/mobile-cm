@@ -1,0 +1,12 @@
+# Packagist serves GitHub's archive of a tag; only src/, composer.json, LICENSE and the readme ship.
+/.gitattributes export-ignore
+/.gitignore     export-ignore
+/phpunit.xml    export-ignore
+/renovate.json  export-ignore
+/tests          export-ignore
+/spec           export-ignore
+/js             export-ignore
+/python         export-ignore
+/rust           export-ignore
+/go             export-ignore
+/dart           export-ignore

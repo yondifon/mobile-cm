@@ -1,8 +1,22 @@
 {
   "name": "mobile-cm",
-  "version": "0.1.0",
+  "version": "1.4.0",
   "description": "Identify the Cameroonian mobile operator (MTN, Orange, Nexttel, Camtel) that issued a phone number.",
-  "private": true,
+  "keywords": [
+    "cameroon",
+    "phone",
+    "mobile",
+    "operator",
+    "mtn",
+    "orange"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yondifon/mobile-cm-php.git",
+    "directory": "js"
+  },
+  "sideEffects": false,
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +31,8 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "bun test"
+    "test": "bun test",
+    "prepack": "tsc -p tsconfig.json"
   },
   "devDependencies": {
     "@types/bun": "^1.1.6",

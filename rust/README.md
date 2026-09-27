@@ -2,16 +2,12 @@
 
 Identify the Cameroonian operator (MTN, Orange, Nexttel, Camtel) that issued a phone number.
 
-Not published to crates.io. No runtime dependencies.
-
 ## Install
 
-Use as a local path dependency until/unless it's published:
-
-```toml
-[dependencies]
-mobile-cm = { path = "../rust" }
+```sh
+cargo add mobile-cm
 ```
+
 
 ## Usage
 
@@ -27,4 +23,4 @@ is_mtn("676777777"); // true
 check("676777777").unwrap().to_string(); // "mtn"
 ```
 
-See [`../spec/README.md`](../spec/README.md) for the input rules, prefix table, and portability caveat: a prefix names the operator that issued the number, not necessarily the subscriber's current network.
+See the [shared spec](https://github.com/yondifon/mobile-cm-php/blob/main/spec/README.md) for the input rules, prefix table, and portability caveat: a prefix names the operator that issued the number, not necessarily the subscriber's current network.
