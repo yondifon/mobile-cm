@@ -1,46 +1,34 @@
-# PHP - Mobile Operators Cameroon
+# Mobile Operators Cameroon
 
-Determine mobile telephone operator from user number (Cameroon)
+Find the operator of a Cameroonian phone number.
 
-### Installation
+## Installation
 
 ```bash
 composer require malico/mobile-cm-php
 ```
 
-### Usage
+Requires PHP 8.1 or later.
+
+## Usage
 
 ```php
-
-<?php
-
-require 'vendor/autoload.php';
-
 use Malico\MobileCM\Network;
 
-$phone = '00237653956703';
-// $phone = '+237653956703';
-// $phone = '237653956703';
-// $phone = '653956703';
+Network::check('+237 653 95 67 03'); // 'mtn'
+Network::check('00237699238282');    // 'orange'
+Network::check('12345');             // null
 
-echo Network::check($phone);
-// nexttel | mtn | orange | camtel
-
-if (Network::isOrange($phone)) {
-    echo 'Orange';
-}
-if (Network::IsNexttel($phone)) {
-    echo 'Nextel';
-}
-
-if (Network::isCamtel($phone)) {
-    echo 'Camtel';
-}
-
-
-?>
+Network::isMTN('653956703');         // true
+Network::isOrange('653956703');      // false
+Network::isNexttel('666768293');     // true
+Network::isCamtel('222479973');      // true
 ```
 
-Simple. But useful
+`check()` returns `mtn`, `orange`, `nexttel`, `camtel`, or `null`.
 
-    * Camtel numbers are tricky. Not sure. Feel feel free to send in a PR for that.
+Numbers may start with `237`, `+237`, or `00237`, and may contain spaces.
+
+A prefix names the operator that issued the number. With number portability, the subscriber may have moved to another network since.
+
+The prefix table and its sources are in [`spec/README.md`](spec/README.md).
