@@ -10,3 +10,4 @@
 /rust           export-ignore
 /go             export-ignore
 /dart           export-ignore
+/RELEASING.md   export-ignore
