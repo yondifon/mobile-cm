@@ -3,7 +3,7 @@ description: >-
   Identify the Cameroonian mobile operator (MTN, Orange, Nexttel, Camtel)
   that issued a phone number.
 version: 1.4.0
-repository: https://github.com/yondifon/mobile-cm-php/tree/main/dart
+repository: https://github.com/yondifon/mobile-cm/tree/main/dart
 topics:
   - cameroon
   - phone

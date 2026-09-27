@@ -14,7 +14,7 @@ keywords = ["cameroon", "phone", "mobile", "operator", "mtn", "orange"]
 dependencies = []
 
 [project.urls]
-Source = "https://github.com/yondifon/mobile-cm-php/tree/main/python"
+Source = "https://github.com/yondifon/mobile-cm/tree/main/python"
 
 [dependency-groups]
 dev = ["pytest>=8"]

@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yondifon/mobile-cm-php.git",
+    "url": "git+https://github.com/yondifon/mobile-cm.git",
     "directory": "js"
   },
   "sideEffects": false,

@@ -21,4 +21,4 @@ check('123456789'); // null
 isMTN('676777777'); // true
 ```
 
-See the [shared spec](https://github.com/yondifon/mobile-cm-php/blob/main/spec/README.md) for the input rules, the prefix table, and the portability caveat: a prefix names the operator that issued the number, not necessarily the network the subscriber is on today.
+See the [shared spec](https://github.com/yondifon/mobile-cm/blob/main/spec/README.md) for the input rules, the prefix table, and the portability caveat: a prefix names the operator that issued the number, not necessarily the network the subscriber is on today.
